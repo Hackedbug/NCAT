@@ -1,3 +1,1 @@
-#  Demo git repo for testing to create a repo locally instead of on the github platform.
-
-This is just some text from the top of my head. It means nothing at all.
+# This NCAT (Networking Configuration Automation Tool is used to automate the configuration of network devices (routers, switches, data center etc) using python and netmiko library utilizing SSH to make the connections.
