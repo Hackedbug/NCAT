@@ -1,7 +1,7 @@
 import math
 
 def calc(num1, op, num2=None): # Created a function for basic calculator
-    operators = ['+', '-', '*', '/', '%', 'sqrt', 'square root'] # List of the known operators used in maths on the calculator
+    operators = ['+', '-', '*', '/', '%', 'sqrt', 'square root', 'sqr', 'square'] # List of the known operators used in maths on the calculator
 
     if op in operators:
         if op == "+":  # Addition
@@ -16,6 +16,8 @@ def calc(num1, op, num2=None): # Created a function for basic calculator
             return num1 % num2
         elif op == "sqrt" or op == "square root":
             return math.sqrt(num1)
+        elif op == "sqr" or op == "square":
+            return num1 ** 2
     else:  # For if the "operator" provided by the user is not among the list
         return "Error occurred in the calculation. " + op + " is an Invalid Operator"
 
@@ -23,7 +25,7 @@ num1 = float(input("Enter the first number: "))  # For the user to input the fir
 op = input("Enter the operator: ")  # For the user to input the operator
 
 # Only ask for the second number if the operation is not square root
-if op not in ["sqrt", "square root"]:
+if op not in ["sqrt", "square root", "sqr", "square"]:
     num2 = float(input("Enter the second number: "))  # For the user to input the second number
     print(calc(num1, op, num2))
 else:
