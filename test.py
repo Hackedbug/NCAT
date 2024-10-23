@@ -1,32 +1,22 @@
-import math
+#it is used to able to assign a meaning to a particular element in the program such as abbreviations
+month = { #a dictionary for the abbreviations of the months of the year
+	"Jan" and "jan": "January",
+	"Feb" and "feb": "February",
+	"Mar" and "mar": "March",
+	"Apr" and "apr": "April",
+	"May" and "may": "May",
+	"Jun" and "jun": "June",
+	"Jul" and "jul": "July",
+	"Aug" and "aug": "August",
+	"Sep" and "sep": "September",
+	"Oct" and "oct": "October",
+	"Nov" and "nov": "November",
+	"Dec" and "dec": "December",
+}
 
-def calc(num1, op, num2=None): # Created a function for basic calculator
-    operators = ['+', '-', '*', '/', '%', 'sqrt', 'square root', 'sqr', 'square'] # List of the known operators used in maths on the calculator
-
-    if op in operators:
-        if op == "+":  # Addition
-            return num1 + num2
-        elif op == "-":  # Subtraction
-            return num1 - num2
-        elif op == "*":  # Multiplication
-            return num1 * num2
-        elif op == "/":  # Division
-            return num1 / num2
-        elif op == "%":  # Modulus
-            return num1 % num2
-        elif op == "sqrt" or op == "square root":
-            return math.sqrt(num1)
-        elif op == "sqr" or op == "square":
-            return num1 ** 2
-    else:  # For if the "operator" provided by the user is not among the list
-        return "Error occurred in the calculation. " + op + " is an Invalid Operator"
-
-num1 = float(input("Enter the first number: "))  # For the user to input the first number
-op = input("Enter the operator: ")  # For the user to input the operator
-
-# Only ask for the second number if the operation is not square root
-if op not in ["sqrt", "square root", "sqr", "square"]:
-    num2 = float(input("Enter the second number: "))  # For the user to input the second number
-    print(calc(num1, op, num2))
-else:
-    print(calc(num1, op))
+print("This is a program to change the abbreviation of a month to the full name of the month.")
+abbr = input("Enter the abbreviation: ")
+if abbr in month: #to make the program cross-check the dictionary for the month
+    print(month[abbr]) #to get the exact name assigned to Jan
+else: #if the abbr provided by the user is not among the assigned
+    print(abbr + " is not a month abbreviation.")
